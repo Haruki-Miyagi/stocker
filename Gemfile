@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-# this is a commit
-
 gem 'rails', '4.2.5'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
