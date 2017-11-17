@@ -10,7 +10,13 @@
     <strong>Conpany name:</strong><%= @stock.name %> - <%= @stock.symbol %><br/>
     <strong>Current ask:</strong><%= @stock.l %><br/>
     <strong>Earrings per share:</strong><%= @stock.eps %><br/>
-    <strong>price/earning ratio:</strong><%= @stock.pe %><br/>
+    <strong>Price/Earning Ratio:</strong><%= @stock.pe %><br/>
+    <strong>Market cap:</strong><%= @stock.mc %><br/>
+    <strong>Stock Open:</strong><%= @stock.op %><br/>
+    <strong>Day's Range:</strong><%= @stock.lo %> - <%= @stock.hi %><br/>
+    <strong>Year High:</strong><%= @stock.hi52 %><br/>
+    <strong>Year Low:</strong><%= @stock.lo52 %><br/>
+    
 
 <% elsif @nothing %>
     <%= @nothing %>
