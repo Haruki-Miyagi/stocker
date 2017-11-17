@@ -6,6 +6,18 @@
 
 <br/><br/>
 
-<% stock = StockQuote::Stock.quote("goog") %>
-<%= stock.name %>
+<% if @stock %>
+    <strong>Conpany name:</strong><%= @stock.name %> - <%= @stock.symbol %><br/>
+    <strong>Current ask:</strong><%= @stock.l %><br/>
+    <strong>Earrings per share:</strong><%= @stock.eps %><br/>
+    <strong>price/earning ratio:</strong><%= @stock.pe %><br/>
+
+<% elsif @nothing %>
+    <%= @nothing %>
+<% end %>
+
+
+<% if @error %>
+    <%= @error%>
+<% end %>
 
