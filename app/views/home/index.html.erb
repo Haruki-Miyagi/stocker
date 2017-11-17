@@ -1,7 +1,10 @@
-<h1>stocker</h1>
-<p>stocker my app</p>
+<%= form_tag root_path, :method => 'POST' do %>
+    <%= text_field_tag 'id', nil, placeholder: 'Enter Conpany Ticker Symbol', size: 50 %>
+    <%= submit_tag 'Luckup stock quote' %>
+<% end %>
 
-<br/>
+
+<br/><br/>
 
 <% stock = StockQuote::Stock.quote("goog") %>
 <%= stock.name %>
