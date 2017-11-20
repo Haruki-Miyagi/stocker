@@ -1,13 +1,23 @@
+<% begin %>
+<%  @stock_quote = StockQuote::Stock.quote(@stock.ticker) %>
+  <% rescue StandardError %>
+ 
+<% end %>
 
-<p>
-  <strong>Ticker:</strong>
-  <%= @stock.ticker %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @stock.user_id %>
-</p>
+<strong>Conpany name:</strong><%= @stock_quote.name %> - <%= @stock_quote.symbol %><br/>
+<strong>Current ask:</strong><%= @stock_quote.l %><br/>
+<strong>Earrings per share:</strong><%= @stock_quote.eps %><br/>
+<strong>Price/Earning Ratio:</strong><%= @stock_quote.pe %><br/>
+<strong>Market cap:</strong><%= @stock_quote.mc %><br/>
+<strong>Stock Open:</strong><%= @stock_quote.op %><br/>
+<strong>Day's Range:</strong><%= @stock_quote.lo %> - <%= @stock_quote.hi %><br/>
+<strong>Year High:</strong><%= @stock_quote.hi52 %><br/>
+<strong>Year Low:</strong><%= @stock_quote.lo52 %><br/>
 
-<%= link_to 'Edit', edit_stock_path(@stock) %> |
-<%= link_to 'Back', stocks_path %>
+
+<br/><br/>
+
+<%= link_to 'Edit', edit_stock_path(@stock), class: 'btn btn-default' %> 
+<%= link_to 'Destroy', stock_path(@stock), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+<%= link_to 'Back', stocks_path, class: 'btn btn-default' %>
