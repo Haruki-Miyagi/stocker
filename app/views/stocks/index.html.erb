@@ -1,7 +1,7 @@
 
 <h1>Listing Stocks</h1>
 
-<table>
+<table class="table table-hover table-striped table-bordered">
   <thead>
     <tr>
       <th>Ticker</th>
@@ -16,7 +16,7 @@
       <% if stock.user_id == current_user.id %>
         <% begin %>
            <%  @stock_quote = StockQuote::Stock.quote(stock.ticker) %>
-         <%  rescue StandardError %>
+         <% rescue StandardError %>
            <tr>
               <td><%= stock.ticker %></td>
               <td><%= "N/A" %></td>
@@ -32,9 +32,9 @@
           <td><%= stock.ticker %></td>
           <td><%= @stock_quote.l %></td>
           <td><%= @stock_quote.mc %></td>
-          <td><%= link_to 'Show', stock %></td>
-          <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
-          <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><center><%= link_to 'Show', stock, class: "btn btn-default btn-xs"%></center></td>
+          <td><center><%= link_to 'Edit', edit_stock_path(stock), class: "btn btn-primary btn-xs" %></center></td>
+          <td><center><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></center></td>
         </tr>
        <% end %> 
       <% end %>
