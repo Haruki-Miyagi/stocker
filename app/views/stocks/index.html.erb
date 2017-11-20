@@ -17,7 +17,14 @@
         <% begin %>
            <%  @stock_quote = StockQuote::Stock.quote(stock.ticker) %>
          <%  rescue StandardError %>
-          
+           <tr>
+              <td><%= stock.ticker %></td>
+              <td><%= "N/A" %></td>
+              <td><%= "N/A" %></td>
+              <td><%= link_to 'Show', stock %></td>
+              <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
+              <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
           <% next %>
         <% end %>
         
