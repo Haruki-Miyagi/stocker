@@ -25,13 +25,13 @@
   
   <div class="col-md-8">
     <br/><br/><br/><br/><br/>
-    <%= @stock_quote.summary[0]['overview'] %>
+    <p align = "justify"><%= @stock_quote.summary[0]['overview'] %></p>
   </div>
   </div>
     
     <div class="panel-footer">
     <%= link_to 'Edit', edit_stock_path(@stock) %>   |
-    <%= link_to 'Destroy', stock_path(@stock), method: :delete, data: { confirm: 'Are you sure?' } %>   |
+    <%= link_to 'Remove stock', stock_path(@stock), method: :delete, data: { confirm: 'Are you sure?' } %>   |
     <%= link_to 'Back', stocks_path %>
     </div>
 
